@@ -22,16 +22,15 @@ class WazzupClient : public QObject
     QTcpSocket *m_socket;
     QSocketNotifier *m_notifier;
 
-
-//    QDataStream data;
-//    QByteArray temp;
+signals:
+    void signalQuit();
 
   public slots:
     void sendData();
-    void processData();
+    void processServerData();
     void closed();
 
-    void fromConsole();
+    void processConsoleData();
 };
 
 #endif // WAZZUPCLIENT_H

@@ -8,5 +8,7 @@ int main(int argc, char *argv[])
 
   WazzupClient client;
 
+  QObject::connect(&client, &WazzupClient::signalQuit, &a, &QCoreApplication::quit);
+
   return a.exec();
 }
